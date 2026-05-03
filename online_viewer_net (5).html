@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devari App</title>
+
+<style>
+body {margin:0;font-family:'Poppins',sans-serif;background:#0f0f0f;color:white;}
+
+.header {
+  padding:15px;
+  background:linear-gradient(90deg,#ff0000,#ff7300);
+  border-radius:0 0 20px 20px;
+}
+
+.search {margin:10px;}
+.search input {width:100%;padding:10px;border-radius:10px;border:none;}
+
+.card {
+  background:#1a1a1a;
+  margin:12px;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(255,0,0,0.2);
+}
+
+.card img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  cursor:pointer;
+}
+
+.content {padding:10px;}
+.badge {background:red;padding:3px 8px;border-radius:8px;font-size:12px;}
+
+.btn {
+  background:linear-gradient(90deg,red,orange);
+  border:none;
+  padding:8px;
+  border-radius:10px;
+  color:white;
+  width:100%;
+  margin-top:5px;
+}
+
+.cart {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#1a1a1a;
+  padding:10px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.wa {
+  position:fixed;
+  bottom:80px;
+  right:15px;
+  background:#25D366;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+.lightbox img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h2>🔥 Devari Dapur Enak</h2>
+  <small>Mie Pedas Level Bisa Dipilih</small>
+</div>
+
+<div class="search">
+<input placeholder="Cari menu...">
+</div>
+
+<!-- MIE -->
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg" onclick="buka(this)">
+<div class="content">
+<span class="badge">🔥 Best Seller</span>
+
+<h3>Mie Pedas Manja</h3>
+<p>Rp 10.000 | 🌶️1</p>
+<button class="btn" onclick="add('Mie Manja',10000)">Tambah</button>
+
+<h3>Mie Pedas Nagih</h3>
+<p>Rp 10.000 | 🌶️🌶️</p>
+<button class="btn" onclick="add('Mie Nagih',10000)">Tambah</button>
+
+<h3>Mie Pedas Gila</h3>
+<p>Rp 10.000 | 🌶️🌶️🌶️</p>
+<button class="btn" onclick="add('Mie Gila',10000)">Tambah</button>
+
+<h3>Mie Pedas Mampus</h3>
+<p>Rp 10.000 | 🌶️🌶️🌶️🌶️</p>
+<button class="btn" onclick="add('Mie Mampus',10000)">Tambah</button>
+
+<h4>🍜 Toping Mie</h4>
+<button class="btn" onclick="add('Toping Daging',2000)">+ Daging (Rp 2.000)</button>
+<button class="btn" onclick="add('Toping Sosis',2000)">+ Sosis (Rp 2.000)</button>
+
+</div>
+</div>
+
+<!-- MINUMAN -->
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg" onclick="buka(this)">
+<div class="content">
+<span class="badge">🥤 Drinks</span>
+
+<h3>Es Teh Manis</h3><p>Rp 3.000</p>
+<button class="btn" onclick="add('Es Teh',3000)">Tambah</button>
+
+<h3>Milo</h3><p>Rp 10.000</p>
+<button class="btn" onclick="add('Milo',10000)">Tambah</button>
+
+<h3>Coklat</h3><p>Rp 10.000</p>
+<button class="btn" onclick="add('Coklat',10000)">Tambah</button>
+
+<h3>Capucino</h3><p>Rp 10.000</p>
+<button class="btn" onclick="add('Capucino',10000)">Tambah</button>
+
+<h3>Matcha</h3><p>Rp 12.000</p>
+<button class="btn" onclick="add('Matcha',12000)">Tambah</button>
+
+<h4>Toping Minuman</h4>
+<button class="btn" onclick="add('Oreo',1000)">+ Oreo (Rp 1.000)</button>
+<button class="btn" onclick="add('Cao',1000)">+ Cao (Rp 1.000)</button>
+
+</div>
+</div>
+
+<!-- DIMSUM -->
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg" onclick="buka(this)">
+<div class="content">
+<span class="badge">🥟 Dimsum</span>
+
+<h3>Dimsum Ayam Udang</h3><p>Rp 3.000</p>
+<button class="btn" onclick="add('Dimsum Ayam Udang',3000)">Tambah</button>
+
+<h3>Dimsum Mozza</h3><p>Rp 3.000</p>
+<button class="btn" onclick="add('Dimsum Mozza',3000)">Tambah</button>
+
+<h3>Dimsum Crab</h3><p>Rp 3.000</p>
+<button class="btn" onclick="add('Dimsum Crab',3000)">Tambah</button>
+
+<h3>Dimsum Mentai</h3><p>Rp 15.000</p>
+<button class="btn" onclick="add('Dimsum Mentai',15000)">Tambah</button>
+
+</div>
+</div>
+
+<!-- BASRENG -->
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg" onclick="buka(this)">
+<div class="content">
+<span class="badge">🔥 Basreng</span>
+<h3>Basreng</h3>
+<p>Rp 6.000</p>
+<button class="btn" onclick="add('Basreng',6000)">Tambah</button>
+</div>
+</div>
+
+<!-- CART -->
+<div class="cart">
+Total: Rp <span id="total">0</span>
+<button class="btn" style="width:auto" onclick="checkout()">Pesan</button>
+</div>
+
+<div class="wa" onclick="checkout()">💬</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+<img id="imgbesar">
+</div>
+
+<script>
+let total=0;
+let list=[];
+
+function add(n,h){
+  total+=h;
+  list.push(n);
+  document.getElementById("total").innerText=total;
+}
+
+function checkout(){
+  let txt="Halo saya mau pesan:%0A";
+  list.forEach(i=>txt+="- "+i+"%0A");
+  txt+="Total: "+total;
+  window.open("https://wa.me/6283130075781?text="+txt);
+}
+
+function buka(img){
+  document.getElementById('lightbox').style.display='flex';
+  document.getElementById('imgbesar').src=img.src;
+}
+</script>
+
+</body>
+</html>
