@@ -134,33 +134,119 @@ body {
 
 <!-- MENU -->
 <div class="card">
-<img src="https://i.imgur.com/6XK6p0M.jpg">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg">
 <div class="content">
 <span class="badge">🔥 Best Seller</span>
-<h3>Mie Pedas</h3>
-<p>10K | Level 🌶️1-4</p>
-<button class="btn" onclick="add('Mie Pedas',10000)">Tambah</button>
+<h3>Mie Pedas Manja</h3>
+<p>10K | Level 1 🌶️</p>
+<button class="btn" onclick="add('Mie Pedas Manja',10000)">Tambah</button>
+<h3>Mie Pedas Nagih</h3>
+<p>10K | Level 2 🌶🌶️</p>
+<button class="btn" onclick="add('Mie Pedas Nagih',10000)">Tambah</button>
+<h3>Mie Pedas Gila</h3>
+<p>10K | Level 3 🌶️🌶🌶</p>
+<button class="btn" onclick="add('Mie Pedas Gila',10000)">Tambah</button>
+<h3>Mie Pedas Mampus</h3>
+<p>10K | Level 4🌶️🌶🌶🌶</p>
+<button class="btn" onclick="add('Mie Pedas Mampus',10000)">Tambah</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://i.imgur.com/kb6Z9Wn.jpg">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg">
 <div class="content">
+<span class="badge">🧊 Drinks</span>
+<h3>Es Teh Manis</h3>
+<p>3K</p>
+<button class="btn" onclick="add('Es Teh Manis',3000)">Tambah</button>
 <h3>Milo</h3>
 <p>10K</p>
 <button class="btn" onclick="add('Milo',10000)">Tambah</button>
+<h3>Coklat</h3>
+<p>10K</p>
+<button class="btn" onclick="add('Coklat',10000)">Tambah</button>
+<h3>Capucino</h3>
+<p>10K</p>
+<button class="btn" onclick="add('Capucino',10000)">Tambah</button>
+<h3>Matcha</h3>
+<p>12K</p>
+<button class="btn" onclick="add('Matcha',12000)">Tambah</button>
 </div>
 </div>
 
 <div class="card">
-<img src="https://i.imgur.com/Ch6z8pX.jpg">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg">
 <div class="content">
-<h3>Dimsum</h3>
+<span class="badge"> 🥟 DimSum</span>
+<h3>Dimsum Ayam Udang</h3>
 <p>3K</p>
-<button class="btn" onclick="add('Dimsum',3000)">Tambah</button>
+<button class="btn" onclick="add('Dimsum Ayam Udang',3000)">Tambah</button>
+<h3>Dimsum Mozza</h3>
+<p>3K</p>
+<button class="btn" onclick="add('Dimsum Mozza',3000)">Tambah</button>
+<h3>Dimsum Crab</h3>
+<p>3K</p>
+<button class="btn" onclick="add('Dimsum Crab',3000)">Tambah</button>
+<h3>Dimsum Mentai</h3>
+<p>15K</p>
+<button class="btn" onclick="add('Dimsum',15000)">Tambah</button>
 </div>
 </div>
 
+<div class="card">
+<img src="https://cdn.phototourl.com/free/2026-05-03-d91d61a4-827f-4521-94c6-69e626d25677.jpg">
+<div class="content">
+<span class="badge">🔥 Basreng</span>
+<h3>Basreng </h3>
+<p>6K</p>
+<button class="btn" onclick="add('Basreng',6000)">Tambah</button>
+  
+  <!-- TOPING MIE -->
+<div class="title">🍜 Toping Mie</div>
+<div class="card">
+<div class="info">
+<div>Daging</div>
+<div class="price">+ Rp 2.000</div>
+</div>
+<button class="btn" onclick="tambah('Daging',2000)">+</button>
+</div>
+<div class="card">
+<div class="info">
+<div>Sosis</div>
+<div class="price">+ Rp 2.000</div>
+</div>
+<button class="btn" onclick="tambah('Sosis',2000)">+</button>
+</div>
+
+  <!-- TOPING MINUMAN -->
+<div class="title">🥤 Toping Minuman</div>
+<div class="card">
+<div class="info">
+<div>Oreo</div>
+<div class="price">+ Rp 1.000</div>
+</div>
+<button class="btn" onclick="tambah('Oreo',1000)">+</button>
+</div>
+<div class="card">
+<div class="info">
+<div>Cao </div>
+<div class="price">+ Rp 1.000</div>
+</div>
+<button class="btn" onclick="tambah('Cao',1000)">+</button>
+  
+</div>
+</div>
+
+<script>
+function tambah(nama,harga){
+alert(nama + " ditambahkan! +Rp" + harga);
+}
+</script>
+
+</body>
+</html>  
+
+  
 <!-- CART -->
 <div class="cart">
 Total: Rp <span id="total">0</span>
@@ -184,7 +270,7 @@ function checkout(){
   list.forEach(i=>txt+="- "+i+"%0A");
   txt+="Total: "+total;
 
-  window.open("https://wa.me/6280000000000?text="+txt);
+  window.open("https://wa.me/083130075781?text="+txt);
 }
 </script>
 
